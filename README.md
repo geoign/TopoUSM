@@ -6,7 +6,7 @@ TopoUSM is a DEM (Digital Elevation Model) visualizing tool using USM (Unsharp m
 Unlike conventional methods such as hillshade or slope, it highlights ridges and drops shadow on the valley.
 
 ## Requirement
-Python 3.6.1 with numpy and gdal modules.
+Python 3.6.1 or higher with numpy and gdal modules.
 
 ## Usage
 Detailed usage is included in the reference code.
