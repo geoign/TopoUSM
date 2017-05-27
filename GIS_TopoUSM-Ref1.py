@@ -23,13 +23,13 @@ class Grid:
     
     def TopoUSM(self, outfile='output.tif', radius=8, sparce=1, dist_decay=2.0):
         if not (radius % 2 == 0):
-            print('[Ridge_Tracking] Radius must be an even number (2,4,6...)')
+            print('[TopoUSM] Radius must be an even number (2,4,6...)')
             radius += 1; print('Changing it to %d' % radius)
         topleft = array([(ix,iy) for ix in arange(radius+1) for iy in arange(radius+1)])
         bottomright = topleft + [self.shape[1]-radius, self.shape[0]-radius]
         Bs = hstack([topleft,bottomright])
         B_sum = zeros((Bs[0][3], Bs[0][2]), dtype=float)
-        print('[Ridge_Tracking] radius=%d | %d iterations' % (radius, len(Bs)))
+        print('[TopoUSM] radius=%d | %d iterations' % (radius, len(Bs)))
         A = self.Z[radius//2:-radius//2,radius//2:-radius//2]
         for i,b in enumerate(Bs):
             if sparce>1 and ((b[0]%sparce!=0) or (b[1]%sparce!=0)): continue
