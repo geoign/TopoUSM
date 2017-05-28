@@ -39,7 +39,7 @@ class Grid:
             dist2 = (radius / (dist1+1))**dist_decay
             B = self.Z[b[1]:b[3],b[0]:b[2]]
             B_mask= invert(isnan(B)) * 1.0
-            B_sum = B_sum + (A - nan_to_num(B) * B_mask) * dist2
+            B_sum = B_sum + (A - B * B_mask) * dist2
         print('OK')
         Z1 = self.Z*nan
         Z1[radius//2:-radius//2,radius//2:-radius//2] = B_sum
