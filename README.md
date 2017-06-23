@@ -14,7 +14,8 @@ Python 3.6.1 or higher with numpy and gdal modules.
 
 ## Usage
 Detailed usage is included in the reference code.
-Confirmed work on a GeoTiff raster file without NaN and projected on UTM (Universal Transverse Mercator).
+Input file needs to be compatible to GDAL.
+Works fine with/without NaNs as well as UTM/LatLons.
 
 ## Licence
 MIT Lisence
